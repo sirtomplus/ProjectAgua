@@ -40,24 +40,24 @@ public class PlayerController : MonoBehaviour
 
     void OnMouseDown()
     {
-#if UNITY_ANDROID
-        var touch = Input.GetTouch(0);
-        var ray = Camera.main.ScreenPointToRay(touch.position);
-#else
+//#if UNITY_ANDROID
+//        var touch = Input.GetTouch(0);
+//        var ray = Camera.main.ScreenPointToRay(touch.position);
+//#else
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-#endif
+//#endif
         m_Distance = Vector3.Distance(ray.origin, transform.position);
         m_IsAccelerating = true;
     }
 
     void OnMouseDrag()
     {
-#if UNITY_ANDROID
-        var touch = Input.GetTouch(0);
-        var ray = Camera.main.ScreenPointToRay(touch.position);
-#else
+//#if UNITY_ANDROID
+//        var touch = Input.GetTouch(0);
+//        var ray = Camera.main.ScreenPointToRay(touch.position);
+//#else
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-#endif
+//#endif
         var pos = ray.origin + ray.direction * m_Distance;
         pos.y = transform.position.y;
         pos.z = transform.position.z;

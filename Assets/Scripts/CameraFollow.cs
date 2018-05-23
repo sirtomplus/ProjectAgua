@@ -9,7 +9,7 @@ public class CameraFollow : MonoBehaviour
     const float INTERP_TIME = 0.1f;
     const float MAX_POS = 2.9f;
     const float MIN_POS = -2.9f;
-    const float DISTANCE_FROM_PLAYER = 1.75f;
+    const float DISTANCE_FROM_PLAYER = 5f;
     void Awake()
     {
         PlayerObject = GameObject.FindGameObjectWithTag("Player");
